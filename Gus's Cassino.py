@@ -1,5 +1,5 @@
 # Style worlds:
-# 0 - sem título
+# 0 - sem tÃ­tulo
 # 1 - negrito
 # 4 - sublinhado
 RED = "\033[1;31m"
@@ -42,7 +42,7 @@ import statistics
 
 
 
-input("\nTecle ENTER para Começar")
+input("\nTecle ENTER para ComeÃ§ar")
 nome = str(input(BOLD + '\nQual o seu nome? : ' + RESET)).title()
 
 op = [(diamante, 1), (saco, 1), (banana, 1), (cadeado, 1), (remedio, 1)]
@@ -61,27 +61,27 @@ def Random():
         try:
             r = (range(6))
             print(CYAN + "\n------------------------------------   ROLETA   -----------------------------------" + RESET)
-            n = int(input("\nDigite um número de '0' à '5' para apostar: "))
+            n = int(input("\nDigite um nÃºmero de '0' Ã  '5' para apostar: "))
             if n in r:
                 rol = randint(0,5)
                 n_sort.append(rol)
                 if n == rol:
                     z += 1
-                    hist.append(f'Na {z}ª partida você ' + UNDER + GREEN + 'Ganhou' + RESET + f' com o número: "{n}".')
-                    print(LIGHT_GREEN + "\n***********************************************************************************\n****************************|      Você ganhou!      |***************"
+                    hist.append(f'Na {z}Âª partida vocÃª ' + UNDER + GREEN + 'Ganhou' + RESET + f' com o nÃºmero: "{n}".')
+                    print(LIGHT_GREEN + "\n***********************************************************************************\n****************************|      VocÃª ganhou!      |***************"
                                         "**************\n***********************************************************************************\n" + RESET)
-                    print('\nParabéns! ' + YELLOW + 'Você ganhou "5" fichas' + RESET)
+                    print('\nParabÃ©ns! ' + YELLOW + 'VocÃª ganhou "5" fichas' + RESET)
                     return 4
                 else:
                     z += 1
-                    hist.append(f'Na {z}ª partida você ' + UNDER + RED + 'Perdeu' + RESET + f' com o número: "{n}". O número sorteado foi: "{rol}".')
-                    print(RED + "\n|---------------------------|    Não foi desta vez    |---------------------------|\n" + RESET + f'\nO número sorteado foi: "{rol}".\n')
+                    hist.append(f'Na {z}Âª partida vocÃª ' + UNDER + RED + 'Perdeu' + RESET + f' com o nÃºmero: "{n}". O nÃºmero sorteado foi: "{rol}".')
+                    print(RED + "\n|---------------------------|    NÃ£o foi desta vez    |---------------------------|\n" + RESET + f'\nO nÃºmero sorteado foi: "{rol}".\n')
                     return -1
                 mudou = True
             else:
-                print(RED + "\nResposta inválida!\n" + RESET + "Tente novamente com um " + UNDER_BOLD + "valor numérico válido." + RESET)
+                print(RED + "\nResposta invÃ¡lida!\n" + RESET + "Tente novamente com um " + UNDER_BOLD + "valor numÃ©rico vÃ¡lido." + RESET)
         except:
-            print(RED + "\nResposta inválida!\n" + RESET + "Tente novamente com um " + UNDER_BOLD + "valor numérico." + RESET)
+            print(RED + "\nResposta invÃ¡lida!\n" + RESET + "Tente novamente com um " + UNDER_BOLD + "valor numÃ©rico." + RESET)
 
 
 
@@ -90,7 +90,7 @@ def CN():
     v += 1
     global hist_CN
     resul = []
-    print(MAGENTA + "\n----------------------------------  Caça-Níquel  ---------------------------------\n" + RESET)
+    print(MAGENTA + "\n----------------------------------  CaÃ§a-NÃ­quel  ---------------------------------\n" + RESET)
     input("\nTecle ENTER para puxar a alavanca\n\n")
     for i in range(3):
         resul.append(random.choice(prize_list))
@@ -103,24 +103,24 @@ def CN():
             time.sleep(0.3)
     print(resul[2])
     if resul.count(diamante) == 3 or resul.count(cadeado) == 3 or resul.count(banana) == 3 or resul.count(remedio) == 3 or resul.count(saco) == 3:
-        print(LIGHT_GREEN + "\n***********************************************************************************\n****************************|      Você ganhou!      |*****************************\n***********************************************************************************\n" + RESET)
+        print(LIGHT_GREEN + "\n***********************************************************************************\n****************************|      VocÃª ganhou!      |*****************************\n***********************************************************************************\n" + RESET)
         if banana in resul:
-            print('\nParabéns! ' + YELLOW + 'Você ganhou "1" fichas' + RESET)
+            print('\nParabÃ©ns! ' + YELLOW + 'VocÃª ganhou "1" fichas' + RESET)
             return 0
         elif diamante in resul:
-            print('\nParabéns! ' + YELLOW + 'Você ganhou "5" fichas' + RESET)
+            print('\nParabÃ©ns! ' + YELLOW + 'VocÃª ganhou "5" fichas' + RESET)
             return 4
         elif remedio in resul:
-            print('\nParabéns! ' + YELLOW + 'Você ganhou "2" fichas' + RESET)
+            print('\nParabÃ©ns! ' + YELLOW + 'VocÃª ganhou "2" fichas' + RESET)
             return 1
         elif cadeado in resul:
-            print('\nParabéns! ' + YELLOW + 'Você ganhou "3" fichas' + RESET)
+            print('\nParabÃ©ns! ' + YELLOW + 'VocÃª ganhou "3" fichas' + RESET)
             return 2
         elif saco in resul:
-            print('\nParabéns! ' + YELLOW + 'Você ganhou "4" fichas' + RESET)
+            print('\nParabÃ©ns! ' + YELLOW + 'VocÃª ganhou "4" fichas' + RESET)
             return 3
     else:
-        print(RED + "\n|---------------------------|    Não foi desta vez    |---------------------------|\n" + RESET)
+        print(RED + "\n|---------------------------|    NÃ£o foi desta vez    |---------------------------|\n" + RESET)
         return -1
 
 
@@ -129,15 +129,15 @@ def Caixa():
     mudou = False
     while mudou == False:
         try:
-            ficha = int(input(GREEN +'\n------------------------------------   Caixa   ------------------------------------\n\n' + RESET + 'Quantas fichas você deseja comprar?: '))
+            ficha = int(input(GREEN +'\n------------------------------------   Caixa   ------------------------------------\n\n' + RESET + 'Quantas fichas vocÃª deseja comprar?: '))
             fichas += ficha
-            r = input(BOLD + "\n             1 - Roleta               2 - Caça-Níquel\n\n" + RESET + "insira o Jogo desejado: ").title()
+            r = input(BOLD + "\n             1 - Roleta               2 - CaÃ§a-NÃ­quel\n\n" + RESET + "insira o Jogo desejado: ").title()
             if r == "1" or r == "Roleta":
                 while fichas > 0:
                     aux = Random()
                     fichas += aux
                     if fichas > 0:
-                        print('Você tem ' + BOLD + f'"{fichas}"' + RESET + ' ficha(s) restante(s).')
+                        print('VocÃª tem ' + BOLD + f'"{fichas}"' + RESET + ' ficha(s) restante(s).')
                         if input("Tecle ENTER para continuar ou digite 'SAIR' para voltar ao Menu incial: ") != "":
                             print(BOLD + "__________________________________________________________________________________")
                             Menu()
@@ -152,7 +152,7 @@ def Caixa():
                     au = CN()
                     fichas += au
                     if fichas > 0:
-                        print('Você tem ' + BOLD + f'"{fichas}"' + RESET + ' ficha(s) restante(s).')
+                        print('VocÃª tem ' + BOLD + f'"{fichas}"' + RESET + ' ficha(s) restante(s).')
                         if input("Tecle ENTER para continuar ou digite 'SAIR' para voltar ao Menu incial: ") != "":
                             print(BOLD + "__________________________________________________________________________________")
                             Menu()
@@ -163,7 +163,7 @@ def Caixa():
                             print(CYAN + "\n---------------------------------------------------------------\n -----------------------  Fim de jogo!  -----------------------\n---------------------------------------------------------------\n" + RESET)
                 mudou = True
         except:
-            print(RED + "\nResposta inválida!\n" + RESET + "Tente novamente com um " + UNDER_BOLD + "valor numérico." + RESET)
+            print(RED + "\nResposta invÃ¡lida!\n" + RESET + "Tente novamente com um " + UNDER_BOLD + "valor numÃ©rico." + RESET)
 
 
 
@@ -172,8 +172,8 @@ def Caixa():
 
 
 def Est():
-    print("O número " + UNDER_BOLD + "mais sorteado" + RESET + ' durante as partidas foi o: "', round(statistics.mode(n_sort), 2), '".')
-    print("A " + UNDER_BOLD + "Média" + RESET + ' dos números sorteados em partida foi de"', round(statistics.mean(n_sort), 2),'".')
+    print("O nÃºmero " + UNDER_BOLD + "mais sorteado" + RESET + ' durante as partidas foi o: "', round(statistics.mode(n_sort), 2), '".')
+    print("A " + UNDER_BOLD + "MÃ©dia" + RESET + ' dos nÃºmeros sorteados em partida foi de"', round(statistics.mean(n_sort), 2),'".')
 
 
 # ---------------------------------------------------------------------------------------------------------------
@@ -188,60 +188,60 @@ def Menu():
     global nome
     global v
     global hist_CN
-    opcoes = ["1", "2", "3", "4", "5", "Caixa", "Histórico de partidas", "Histórico", "Estatística", "Estatística de jogo", "Sair", "Saldo", "Saldo de fichas"]
+    opcoes = ["1", "2", "3", "4", "5", "Caixa", "HistÃ³rico de partidas", "HistÃ³rico", "EstatÃ­stica", "EstatÃ­stica de jogo", "Sair", "Saldo", "Saldo de fichas"]
     print(LIGHT_GREY + "\n-------------------------------------  Menu  -------------------------------------" + RESET)
-    escolha = str(input('\nOlá, ' + BOLD + f'{nome}!' + RESET + '\n\nSeja bem vindo ao menu.' + BOLD + '\n1 - Caixa;\n2 - Histórico de partida;\n3 - Estatística de Jogo; \n4 - Saldo de fichas;\n5 - Sair; '
-    + RESET + '\n\nDigite uma das opções acima: ')).title()
+    escolha = str(input('\nOlÃ¡, ' + BOLD + f'{nome}!' + RESET + '\n\nSeja bem vindo ao menu.' + BOLD + '\n1 - Caixa;\n2 - HistÃ³rico de partida;\n3 - EstatÃ­stica de Jogo; \n4 - Saldo de fichas;\n5 - Sair; '
+    + RESET + '\n\nDigite uma das opÃ§Ãµes acima: ')).title()
 
     while escolha not in opcoes:
-        print("\nPor favor, insira uma opção válida.")
-        escolha = str(input(BOLD + '1 - Caixa;\n2 - Histórico de partida;\n3 - Estatística de jogo;\n4 - Saldo de fichas;\n5 - Sair; '
-            + RESET + '\n\nDigite uma das opções acima: ')).title()
+        print("\nPor favor, insira uma opÃ§Ã£o vÃ¡lida.")
+        escolha = str(input(BOLD + '1 - Caixa;\n2 - HistÃ³rico de partida;\n3 - EstatÃ­stica de jogo;\n4 - Saldo de fichas;\n5 - Sair; '
+            + RESET + '\n\nDigite uma das opÃ§Ãµes acima: ')).title()
     if escolha == "5" or escolha == "Sair":
-        print('\n-----------------------------------------------------------------------------------\n                              Obrigado pela presença!                              \n-----------------------------------------------------------------------------------')
+        print('\n-----------------------------------------------------------------------------------\n                              Obrigado pela presenÃ§a!                              \n-----------------------------------------------------------------------------------')
         z = 0
         v = 0
         hist_CN = []
         hist = []
         fichas = 0
         n_sort = []
-        input("\nTecle ENTER para Começar")
+        input("\nTecle ENTER para ComeÃ§ar")
         nome = str(input(BOLD + '\nQual o seu nome? : ' + RESET)).title()
         Menu()
     elif escolha == "1" or escolha == "Caixa":
         Caixa()
-    elif escolha == "3" or escolha == "Estatística" or escolha == "Estatística de Jogo":
-        print(LIGHT_GREY + "\n----------------------------------  Estatística  ---------------------------------\n" + RESET)
+    elif escolha == "3" or escolha == "EstatÃ­stica" or escolha == "EstatÃ­stica de Jogo":
+        print(LIGHT_GREY + "\n----------------------------------  EstatÃ­stica  ---------------------------------\n" + RESET)
         if z == 0:
-            print(YELLOW + BOLD + "Você não possui histórico de partidas para avaliação." + RESET)
+            print(YELLOW + BOLD + "VocÃª nÃ£o possui histÃ³rico de partidas para avaliaÃ§Ã£o." + RESET)
             Menu()
         else:
             Est()
             Menu()
     elif escolha == "4" or escolha == "Saldo" or escolha == "Saldo de fichas":
-        print('\n---------------------------------------------------------------------------------\n                            ' + LIGHT_GREEN + ' Você tem ' + BOLD + f'"{fichas}"' + RESET + LIGHT_GREEN + ' ficha(s).' + RESET + '\n---------------------------------------------------------------------------------\n')
+        print('\n---------------------------------------------------------------------------------\n                            ' + LIGHT_GREEN + ' VocÃª tem ' + BOLD + f'"{fichas}"' + RESET + LIGHT_GREEN + ' ficha(s).' + RESET + '\n---------------------------------------------------------------------------------\n')
         Menu()
-    elif escolha == "2" or escolha == "Histórico de partida" or escolha == "Histórico":
-        print(LIGHT_GREY + "\n-----------------------------------  Histórico  ----------------------------------\n" + RESET)
-        cho = input(BOLD + "\n\n             1 - Roleta                 2 - Caça-Níquel\n\n" + RESET + "Qual o Histórico desejado: ").title()
+    elif escolha == "2" or escolha == "HistÃ³rico de partida" or escolha == "HistÃ³rico":
+        print(LIGHT_GREY + "\n-----------------------------------  HistÃ³rico  ----------------------------------\n" + RESET)
+        cho = input(BOLD + "\n\n             1 - Roleta                 2 - CaÃ§a-NÃ­quel\n\n" + RESET + "Qual o HistÃ³rico desejado: ").title()
         if cho == "Roleta" or cho == "1":
             if z == 0:
-                print(YELLOW + BOLD + "Você não possui histórico." + RESET)
+                print(YELLOW + BOLD + "VocÃª nÃ£o possui histÃ³rico." + RESET)
                 Menu()
             else:
-                print(CYAN + "\n------------------------------   Histórico da Roleta  -----------------------------\n" + RESET)
+                print(CYAN + "\n------------------------------   HistÃ³rico da Roleta  -----------------------------\n" + RESET)
                 for i in hist:
                     print(i)
                 input("\n                 Tecle ENTER para Continuar: ")
                 Menu()
         else:
             if v == 0:
-                print(YELLOW + BOLD + "Você não possui histórico." + RESET)
+                print(YELLOW + BOLD + "VocÃª nÃ£o possui histÃ³rico." + RESET)
                 Menu()
             else:
-                print(MAGENTA + "\n---------------------------   Histórico do Caça-Níquel   --------------------------\n" + RESET)
+                print(MAGENTA + "\n---------------------------   HistÃ³rico do CaÃ§a-NÃ­quel   --------------------------\n" + RESET)
                 for i in range(v):
-                    print(f'Na {i + 1}ª partida o conjunto sorteado foi:', end=" ")
+                    print(f'Na {i + 1}Âª partida o conjunto sorteado foi:', end=" ")
                     for j in range(3):
                         print(hist_CN[i][j], end=" ")
                     print("")
